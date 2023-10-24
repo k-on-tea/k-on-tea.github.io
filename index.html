@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>茶</title>
+    <style>
+        body{
+            background-image: url('https://pic1.zhimg.com/80/v2-f9b7af327087ac828b09841afdd9497a_1440w.webp');
+            /* background-size:cover; */
+            /* background铺满 */
+            background-size:cover;
+            /* background-repeat: no-repeat; */
+            display: flex;
+            flex-direction: column;
+        }
+        .animate-text{
+            width: 100%;
+            height: 40vh;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            font-size: 50px;
+            color: #fff;
+            font-family: 'Microsoft Yahei';
+            text-align: center;
+            text-wrap: nowrap;
+            /* animation: animate 5s linear infinite; */
+        }
+        .nav{  
+               margin-top: 80vh;
+               height: 14vh;
+               display: flex;      
+               justify-content: space-around;
+               gap:4%;
+        }
+        .nav .card{
+            border-radius: 10px;
+            position:static;
+            background-color: #fff;
+            height: 100%;
+            flex: 0.16;
+            transition: all 0.6s linear;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            backdrop-filter: blur(50%);
+            overflow: hidden;
+        }
+        .nav .card:hover{
+            transform: translateY(-20px);
+        }
+        .nav .card img{
+            width: 100%;
+            height: 60%;
+        }
+    </style>
+</head>
+<body>
+    <div class="animate-text">
+         <p>浮生半日，赴一场品茶之约</p>
+    </div>
+    <div class="nav">
+        <div class="card">
+            <img src="https://pic3.zhimg.com/80/v2-9806da2bd10096762293148530c09b24_1440w.webp" alt="">
+            <div class="card-contentt">
+                fsad
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://pic3.zhimg.com/80/v2-9806da2bd10096762293148530c09b24_1440w.webp" alt="">
+            <div class="card-contentt">
+                fsad
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://pic3.zhimg.com/80/v2-9806da2bd10096762293148530c09b24_1440w.webp" alt="">
+            <div class="card-contentt">
+                fsad
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://pic3.zhimg.com/80/v2-9806da2bd10096762293148530c09b24_1440w.webp" alt="">
+            <div class="card-contentt">
+                fsad
+            </div>
+        </div>
+
+    </div>
+
+
+    <script>
+   
+        const words = '浮生半日，赴一场品茶之约';
+        textContainer = document.querySelector('.animate-text');
+        autoText = document.querySelector('.animate-text p');
+        let speed = 250
+        let index = 1;
+        autoText.innerText = 'nice to meet you';
+        autoTextAffect();
+        //    setInterval(autoTextAffect,1000);
+        function autoTextAffect() {
+            autoText.innerText = words.slice(0, index);
+            index = (index + 1) % words.length;
+            //   index=index+1;
+            setTimeout(autoTextAffect, speed);
+        }
+
+    </script>
+</body>
+</html>
