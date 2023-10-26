@@ -6,7 +6,7 @@
     <title>茶</title>
     <style>
         body{
-            background-image: url('https://pic1.zhimg.com/80/v2-f9b7af327087ac828b09841afdd9497a_1440w.webp');
+            background-image: url('https://img.zcool.cn/community/016ed45d8a27c0a801211d53cca4c8.jpg@1280w_1l_2o_100sh.jpg');
             /* background-size:cover; */
             /* background铺满 */
             background-size:cover;
@@ -53,6 +53,19 @@
             width: 100%;
             height: 60%;
         }
+        .nav .card img{
+            width: 100%;
+            height: 70%;
+        }
+        .nav .card a{
+            text-decoration: none;
+             color: black;
+        }
+        .card-content{
+            font-size: 110%;
+            font-weight: bold;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -61,27 +74,27 @@
     </div>
     <div class="nav">
         <div class="card">
-            <img src="https://pic3.zhimg.com/80/v2-9806da2bd10096762293148530c09b24_1440w.webp" alt="">
-            <div class="card-contentt">
-                fsad
+            <img src="https://img.zcool.cn/community/0113c856580c3132f87512f606d6f5.JPG@1280w_1l_2o_100sh.jpg" alt="">
+            <div class="card-content">
+                <a href="html/teaIntroduction.html">茶叶品种</a>
             </div>
         </div>
         <div class="card">
-            <img src="https://pic3.zhimg.com/80/v2-9806da2bd10096762293148530c09b24_1440w.webp" alt="">
-            <div class="card-contentt">
-                fsad
+            <img src="https://cbu01.alicdn.com/img/ibank/2017/942/133/6498331249_1829288745.jpg" alt="">
+            <div class="card-content">
+                    <a href="html/teaIntroduction.html">品茶步骤</a>
             </div>
         </div>
         <div class="card">
-            <img src="https://pic3.zhimg.com/80/v2-9806da2bd10096762293148530c09b24_1440w.webp" alt="">
-            <div class="card-contentt">
-                fsad
+            <img src="https://ts1.cn.mm.bing.net/th/id/R-C.4877b749e9272ba2a20c656eeadb2f56?rik=ANVaY6HnHUEOXA&riu=http%3a%2f%2fimg95.699pic.com%2fphoto%2f50049%2f5722.jpg_wh860.jpg&ehk=9VCieWaTHfgXbynlcCD8qlqxBTbCRb7RHsRtPJuvFnQ%3d&risl=&pid=ImgRaw&r=0" alt="">
+            <div class="card-content">
+                    <a href="html/teaIntroduction.html">茶文化</a>
             </div>
         </div>
         <div class="card">
-            <img src="https://pic3.zhimg.com/80/v2-9806da2bd10096762293148530c09b24_1440w.webp" alt="">
-            <div class="card-contentt">
-                fsad
+            <img src="https://p1.ssl.qhimg.com/t015395baf1ef529b85.jpg" alt="">
+            <div class="card-content">
+                        <a href="html/teaIntroduction.html">更多资讯</a>
             </div>
         </div>
 
@@ -99,7 +112,7 @@
         autoTextAffect();
         //    setInterval(autoTextAffect,1000);
         function autoTextAffect() {
-            autoText.innerText = words.slice(0, index);
+            autoText.innerText = words.slice(0, index+1);
             index = (index + 1) % words.length;
             //   index=index+1;
             setTimeout(autoTextAffect, speed);
