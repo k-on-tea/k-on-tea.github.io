@@ -6,12 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        body{
+            font-family: 'Kaiti';
+        }
         .nav{
 
-            width: 100%;
+            width: 110%;
             display: flex;
             justify-content: space-between;
             background-color: black;
+
         }
         .nav .logo{
             width: 10vw;
@@ -75,14 +79,35 @@
             text-align: center;
             /* display: flex; */
         }
-
         .gap .text {
             font-size: 1.5em;
+        }
+        @media  screen and (max-width: 600px) {
+            .nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            .nav .logo {
+               width: 50vw;
+               height: 50px;
+            }
+            .nav .menu {
+                width: 100%;
+                font-size: 1em;
+            }
+            .shell .gap {
+                height: 10vh;
+                /* font-size: 1em; */
+            }
+            .shell .gap .text{
+                font-size: 1em;
+            }
         }
     </style>
 </head>
 
 <body>
+    <audio src="../assets/music/index_bgm.mp3" ></audio>
     <div class="nav">
         <a href="../index.html">
                 <div class="logo"
@@ -151,5 +176,8 @@
 
     </div>
 </body>
-
+ <script>
+    let audio=document.querySelector('audio');
+    audio.play();
+ </script>
 </html>
