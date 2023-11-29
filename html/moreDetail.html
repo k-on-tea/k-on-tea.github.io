@@ -9,6 +9,7 @@
                 body {
                         /* background-color: #efedd6; */
                         background-image: url('https://ts1.cn.mm.bing.net/th/id/R-C.859d852902d33e492f5e431e30644e12?rik=zYV8tf2TQtIgig&riu=http%3a%2f%2fimg.zcool.cn%2fcommunity%2f011c5957ccf3600000012e7e580a70.jpg%401280w_1l_2o_100sh.jpg&ehk=nqdJeDGSqjm1HNo3Q0amLUwUTPr0yffgtSFHYl1SdfQ%3d&risl=&pid=ImgRaw&r=0');
+                        background-size: cover;
                         font-family: 'Roboto', sans-serif;
                         display: flex;
                         flex-direction: column;
@@ -31,24 +32,32 @@
                         display: flex;
                         align-items: center;
                         justify-content: center;
-                        width: 400px;
-                        height: 200px;
+                        width: 40vw;
+                        height: 30vh;
                         margin: 10px;
+                        font-size: 150%;
+                        font-weight: bold;
                         border-radius: 10px;
                         box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
                         transform: translateX(400%);
                         transition: transform 0.4s ease;
                 }
-                .box:nth-of-type(even) {
-                transform: translateX(-400%);
-                }
+                    .box:nth-of-type(even) {
+                    transform: translateX(-400%);
+                    }
 
-                .box.show {
-                transform: translateX(0);
-                }
+                    .box.show {
+                    transform: translateX(0);
+                    }
 
                 .box h2 {
                 font-size: 45px;
+                }
+                @media screen and (max-width: 800px) {
+                    .boxContainer .box{
+                        font-size: 1em;
+                        height: 10%;
+                    }
                 }
 
 
@@ -116,22 +125,7 @@
                         <p>茶字是会意字，分三部分。木表示草木，人表示中国人，上面是树叶。也就是说中国人发明了用树叶作为饮料。读音是茶，来自茶叶的生产是一茬一茬的收获，故读作“茶”。“茶”字拆开，就是“人在草木间”，又有长寿之意，源于“廿”（草字头）+“人”（中间的“人”字）+
                         “八十”（“木”字）= 一百零八，故一百零八岁的老人被称为“茶寿老人”，寓指爱茶饮茶，遵循“人在草木间”生态自然简单的生活，人便能健康长寿，活到一百零八岁。</p>
                     </div>
-                    <div class="box">
-                        <h2>茶字是会意字，分三部分。木表示草木，人表示中国人，上面是树叶。也就是说中国人发明了用树叶作为饮料。读音是茶，来自茶叶的生产是一茬一茬的收获，故读作“茶”。“茶”字拆开，就是“人在草木间”，又有长寿之意，源于“廿”（草字头）+“人”（中间的“人”字）+
-                        “八十”（“木”字）= 一百零八，故一百零八岁的老人被称为“茶寿老人”，寓指爱茶饮茶，遵循“人在草木间”生态自然简单的生活，人便能健康长寿，活到一百零八岁。</h2>
-                    </div>
-                    <div class="box">
-                        <h2>茶字是会意字，分三部分。木表示草木，人表示中国人，上面是树叶。也就是说中国人发明了用树叶作为饮料。读音是茶，来自茶叶的生产是一茬一茬的收获，故读作“茶”。“茶”字拆开，就是“人在草木间”，又有长寿之意，源于“廿”（草字头）+“人”（中间的“人”字）+
-                        “八十”（“木”字）= 一百零八，故一百零八岁的老人被称为“茶寿老人”，寓指爱茶饮茶，遵循“人在草木间”生态自然简单的生活，人便能健康长寿，活到一百零八岁。</h2>
-                    </div>
-                    <div class="box">
-                        <h2>茶字是会意字，分三部分。木表示草木，人表示中国人，上面是树叶。也就是说中国人发明了用树叶作为饮料。读音是茶，来自茶叶的生产是一茬一茬的收获，故读作“茶”。“茶”字拆开，就是“人在草木间”，又有长寿之意，源于“廿”（草字头）+“人”（中间的“人”字）+
-                        “八十”（“木”字）= 一百零八，故一百零八岁的老人被称为“茶寿老人”，寓指爱茶饮茶，遵循“人在草木间”生态自然简单的生活，人便能健康长寿，活到一百零八岁。</h2>
-                    </div>
-                    <div class="box">
-                        <h2>茶字是会意字，分三部分。木表示草木，人表示中国人，上面是树叶。也就是说中国人发明了用树叶作为饮料。读音是茶，来自茶叶的生产是一茬一茬的收获，故读作“茶”。“茶”字拆开，就是“人在草木间”，又有长寿之意，源于“廿”（草字头）+“人”（中间的“人”字）+
-                        “八十”（“木”字）= 一百零八，故一百零八岁的老人被称为“茶寿老人”，寓指爱茶饮茶，遵循“人在草木间”生态自然简单的生活，人便能健康长寿，活到一百零八岁。</h2>
-                    </div>
+ 
         </div>
         <script>
             const boxes = document.querySelectorAll('.box')
