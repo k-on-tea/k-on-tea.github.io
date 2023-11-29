@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/nav.css">
+    <style>
+        body {
+            /* background-color: rgb(223, 171, 133); */
+            background-image: url('https://ts1.cn.mm.bing.net/th/id/R-C.859d852902d33e492f5e431e30644e12?rik=zYV8tf2TQtIgig&riu=http%3a%2f%2fimg.zcool.cn%2fcommunity%2f011c5957ccf3600000012e7e580a70.jpg%401280w_1l_2o_100sh.jpg&ehk=nqdJeDGSqjm1HNo3Q0amLUwUTPr0yffgtSFHYl1SdfQ%3d&risl=&pid=ImgRaw&r=0');
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            margin: auto;
+            display: flex;
+            width: 90vw;
+        }
+
+        .panel {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 80vh;
+            border-radius: 50px;
+            color: #fff;
+            cursor: pointer;
+            flex: 1;
+            margin: 10px;
+            position: relative;
+            transition: all 700ms ease-in;
+        }
+
+        .panel h3 {
+            font-size: 24px;
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            margin: 0;
+            opacity: 0;
+        }
+
+        .panel.active {
+            flex: 5;
+        }
+
+        .panel.active h3 {
+            opacity: 1;
+            transition: opacity 0.7s ease-in 0.4s;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                width: 100vw;
+            }
+
+            .panel.panel.active {
+                flex: 2;
+            }
+
+            /* .panel:nth-of-type(4),
+            .panel:nth-of-type(5) {
+                display: none;
+            } */
+        }
+    </style>
+</head>
+
+<body>
+    <audio src="../assets/music/index_bgm.mp3"></audio>
+    <div class="nav">
+        <a href="../index.html">
+            <div class="logo"
+                style="background-image: url('https://img.zcool.cn/community/0163da56a31cf26ac7256cb0e644a0.JPG@1280w_1l_2o_100sh.jpg');">
+            </div>
+        </a>
+        <div class="menu">
+            <ul>
+                <!-- <li>茶叶品种</li>
+                        <li>品茶步骤</li>
+                        <li>茶文化</li>
+                        <li>更多资讯</li> -->
+
+            </ul>
+            <ul>
+                <a href="teaIntroduction.html">
+                    <li>茶叶品种</li>
+                </a><a href="">
+                    <li>品茶步骤</li>
+                </a><a href="teaCulture.html">
+                    <li>茶文化</li>
+                </a><a href="moreDetail.html">
+                    <li>更多资讯</li>
+                </a>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="panel active" style="background-image: url('https://tgi12.jia.com/114/832/14832736.jpg')">
+            <h3>活水还须活火烹，自临钓石取深清。</h3>
+        </div>
+        <div class="panel"
+            style="background-image: url('https://ts1.cn.mm.bing.net/th/id/R-C.2ba6ffe2a5ea5dbe327cc555a91bb403?rik=GKm7zgXf5PMBxA&riu=http%3a%2f%2fimg.pconline.com.cn%2fimages%2fupload%2fupc%2ftx%2fphotoblog%2f1112%2f16%2fc4%2f9960530_9960530_1324011348312.jpg&ehk=4hjSPQYQrwpfu8q0CUVuBzbgNaGA%2bXBHbGbQ%2f05jrWk%3d&risl=&pid=ImgRaw&r=0')">
+            <h3>大瓢贮月归春瓮，小杓分江入夜瓶。</h3>
+        </div>
+        <div class="panel"
+            style="background-image: url('https://img.zcool.cn/community/01371f5d4bb20ba8012187f4e3b643.jpg@1280w_1l_2o_100sh.jpg')">
+            <h3>雪乳已翻煎处脚，松风忽作泻时声。</h3>
+        </div>
+        <div class="panel"
+            style="background-image: url('https://img.zcool.cn/community/0168d95e382ac0a80120a895d5667f.jpg@1280w_1l_2o_100sh.jpg')">
+            <h3>嫩芽香且灵，吾谓草中英。</h3>
+        </div>
+        <div class="panel"
+            sindtyle="background-image: url('https://img.zcool.cn/community/01371f5d4bb20ba8012187f4e3b643.jpg@1280w_1l_2o_100sh.jpg')">
+            <h3>日午独觉无余声，山童隔竹敲茶臼。</h3>
+        </div>
+
+    </div>
+    <script>
+        let audio = document.querySelector('audio');
+        audio.play();
+        const panels = document.querySelectorAll('.panel')
+
+        panels.forEach(panel => {
+            panel.addEventListener('click', () => {
+                removeActiveClasses()
+                panel.classList.add('active')
+            })
+        })
+        function removeActiveClasses() {
+            panels.forEach(panel => {
+                panel.classList.remove('active')
+            })
+        }
+    </script>
+
+</body>
+
+</html>
