@@ -76,6 +76,7 @@
         .nav .card img {
             width: 100%;
             height: 70%;
+           
         }
 
         .nav a {
@@ -98,7 +99,15 @@
             /* background-color: black; */
 
         }
+        @keyframes girlRotate {
+            0% {
+                transform: rotate(0deg);
+            }
 
+            100% {
+                transform: rotate(360deg);
+            }
+        }
         @keyframes cardEnter {
             0% {
                 transform: translateY(40px);
@@ -151,6 +160,7 @@
         .girlShell img {
             width: 30%;
             height: 100%;
+            /* animation: girlRotate 2s linear infinite; */
         }
         .girlShell span{
             font-size: 2rem;
@@ -213,10 +223,10 @@
         </div>
 
         <div class="card">
-            <a href="html/famousTea.html">
+            <a href="html/tasteTeaStep.html">
                 <img src="https://cbu01.alicdn.com/img/ibank/2017/942/133/6498331249_1829288745.jpg" alt="">
                 <div class="card-content">
-                    <a href="html/teaIntroduction.html">品茶步骤</a>
+                    <a href="html/tasteTeaStep.html">品茶步骤</a>
                 </div>
             </a>
         </div>

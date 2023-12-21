@@ -56,11 +56,19 @@
         .panel.active li{
             opacity: 1;
         }
-        .panel.active h3 {
+        .panel.active h1 {
             opacity: 1;
             transition: all 0.7s ease-in 0.4s;
+            animation: 1.5s shakePanelText infinite;
         }
-
+        @keyframes shakePanelText {
+            0%{
+                opacity: 0.5;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
         @media (max-width: 880px) {
             .container {
                 width: 100vw;
@@ -104,7 +112,7 @@
                     <li>制茶步骤</li>
                 </a><a href="famousTea.html">
                     <li>茶叶品种</li>
-                </a><a href="famousTea.html">
+                </a><a href="tasteTeaStep.html">
                     <li>品茶步骤</li>
                 </a><a href="moreDetail.html">
                     <li>更多资讯</li>
