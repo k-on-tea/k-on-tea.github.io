@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.js"></script>
     <title>Document</title>
     <link rel="stylesheet" href="../css/nav.css">
     <style>
@@ -168,20 +169,25 @@
     <script>
         let audio = document.querySelector('audio');
         audio.play();
-        const panels = document.querySelectorAll('.panel')
+        // const panels = document.querySelectorAll('.panel')
 
-        panels.forEach(panel => {
-            panel.addEventListener('click', () => {
-                removeActiveClasses()
-                panel.classList.add('active')
-            })
+        // panels.forEach(panel => {
+        //     panel.addEventListener('click', () => {
+        //         removeActiveClasses()
+        //         panel.classList.add('active')
+        //     })
+        // })
+
+        // function removeActiveClasses() {
+        //     panels.forEach(panel => {
+        //         panel.classList.remove('active')
+        //     })
+        // }
+        // jQuery写法
+        $('.panel').click(function () {
+            $('.panel').removeClass('active');
+            $(this).addClass('active');
         })
-
-        function removeActiveClasses() {
-            panels.forEach(panel => {
-                panel.classList.remove('active')
-            })
-        }
     </script>
 
 </body>

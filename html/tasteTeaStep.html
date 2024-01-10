@@ -4,78 +4,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.js"></script>
     <title>Document</title>
     <link rel="stylesheet" href="../css/nav.css">
     <style>
-        body {
-            /* background-color: #efedd6; */
-            background-image: url('https://ts1.cn.mm.bing.net/th/id/R-C.859d852902d33e492f5e431e30644e12?rik=zYV8tf2TQtIgig&riu=http%3a%2f%2fimg.zcool.cn%2fcommunity%2f011c5957ccf3600000012e7e580a70.jpg%401280w_1l_2o_100sh.jpg&ehk=nqdJeDGSqjm1HNo3Q0amLUwUTPr0yffgtSFHYl1SdfQ%3d&risl=&pid=ImgRaw&r=0');
+        /* ----------------------------------nav  */
+        .shell {
+            background-color: rgb(252, 247, 238);
+            width: 100xw;
+        }
+
+        .shell .img {
+            width: 100vw;
+            height: 80vh;
+            background-position: center;
             background-size: cover;
-            font-family: 'Roboto', sans-serif;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin: 0;
-            overflow-x: hidden;
         }
 
-        .boxContainer {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .boxContainer .box {
-            /* background-color: steelblue; */
-
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40vw;
-            height: 30vh;
-            margin: 10px;
+        .shell .img .text {
+            width: 80%;
             font-size: 150%;
             font-weight: bold;
-            border-radius: 10px;
-            box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
-            transform: translateX(400%);
-            transition: transform 0.4s ease;
-            animation:  2s gradient linear infinite;
-            /* animation:  2s boxBorder linear infinite; */
-        }
-        @keyframes gradient {
-            0% { background-color: rgba(179, 255, 0, 0.539); }
-            50% { background-color: rgba(255, 170, 0, 0.313); }
-            100% { background-color:rgba(179, 255, 0, 0.539); }
+            margin: auto auto;
+            text-align: center;
         }
 
-        @keyframes boxBorder {
-            0%{
-                boder: 5px solid #fff;
+        .shell .gap {
+            width: 100vw;
+            height: 20vh;
+            background-color: rgb(252, 247, 238);
+            color: black;
+            line-height: 100px;
+            text-align: center;
+            display: flex;
+        }
+
+        .gap {
+            font-size: 1.5em;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .gap .imgContainer {
+            width: 30%;
+            display: flex;
+            /* justify-content: space-around; */
+        }
+
+        .gap .imgContainer img {
+            width: 40%;
+            height: 100%;
+
+        }
+
+        .gap .imgContainer img.firstImg::after {
+            content: "";
+            width: 300px;
+            height: 100px;
+            position: absolute;
+            background-color: black;
+            transform: translateX(50%);
+            /* opacity: 0.5; */
+            /* position: absolute; */
+
+
+        }
+
+        .gap .imgContainer .arrowRight {
+            width: 20%;
+            height: 30%;
+            transform: translateY(80%);
+            opacity: 0;
+            transition: all 1s ease-in-out;
+            /* animation: shakeLight 1s infinite; */
+        }
+
+        .gap .imgContainer .finishImg {
+            opacity: 0;
+            transition: all 1s ease-in-out;
+        }
+
+        .gap .imgContainer .arrowRight.gapActive {
+            opacity: 1;
+        }
+
+        .gap .imgContainer .finishImg.gapActive {
+            opacity: 1;
+        }
+
+        .gap .imgContainer .clickButton {
+            width: 4%;
+            height: 8%;
+            transform: translate(60%, 200%);
+            position: absolute;
+            animation: shakeLight 1.3s ease-in-out infinite;
+        }
+
+        @keyframes shakeLight {
+            0% {
+                opacity: 0;
+                /* translate: translate(60%, 500%); */
+                scale: 1.1;
             }
-            100%{
-                border: 5px solid #000;
+
+            /* 50%{
+                opacity: 0.8;
+                translate: translate(60%, 400%);
+            } */
+            100% {
+                opacity: 1;
+                /* translate: translate(60%, 200%); */
+                scale: 1.4;
             }
         }
-        .box:nth-of-type(even) {
-            transform: translateX(-400%);
-        }
 
-        .box.show {
-            transform: translateX(0);
-        }
+        @media screen and (max-width: 900px) {
+            .nav {
+                flex-direction: column;
+                align-items: center;
+            }
 
-        .box h2 {
-            font-size: 45px;
-        }
+            .nav .logo {
+                width: 50vw;
+                height: 50px;
+            }
 
-        @media screen and (max-width: 800px) {
-            .boxContainer .box {
+            .nav .menu {
+                width: 100%;
                 font-size: 1em;
-                height: 10%;
+            }
+
+            .shell .gap {
+                height: 10vh;
+                /* font-size: 1em; */
+            }
+
+            .shell .gap {
+                font-size: 1em;
+            }
+
+            .shel .gap .point {
+                transform: translate(20%, -20%);
+            }
+
+        }
+        @media screen and (min-width: 600px) {
+
+
+            .shell .gap {
+                font-size: 2em;
+            }
+            .img{
+                font-size: 2em;
+            }   
+            .shel .gap .point {
+                transform: translate(20%, -20%);
+            }
+        }
+        @media screen and (max-height: 600px) {
+
+
+            .shell .gap {
+                font-size: 1rem;
+            }
+            .img{
+                font-size: 1.5em;
+            }   
+            .shel .gap .point {
+                transform: translate(20%, -20%);
             }
         }
     </style>
@@ -91,9 +190,9 @@
         <div class="menu">
             <ul>
                 <!-- <li>茶叶品种</li>
-                                <li>品茶步骤</li>
-                                <li>茶文化</li>
-                                <li>更多资讯</li> -->
+                <li>制茶步骤</li>
+                <li>品茶步骤</li>
+                <li>更多资讯</li> -->
 
             </ul>
             <ul>
@@ -109,65 +208,149 @@
             </ul>
         </div>
     </div>
-    <div class="boxContainer">
-        <div class="box">
-            <p>茶由药用转化为习常饮料，严格意义的“茶”便随之产生了，其典型标志便是“茶”（cha）音的出现。郭璞注《尔雅·释木》“槚”云：“树小如栀子，冬生叶，可煮作羹饮。今呼早采者为茶，晚取者为茗，一名荈，蜀人名之苦荼。”可见，汉时“荼”字已有特指饮料“茶”的读音了，“茶”由“荼”分离出来，并走上了“独立”发展道路。但“茶”字的出现则是伴随茶事的发展和商业活动的日益频繁，直到中唐以后的事，也正符合新符号的产生后于人们的社会生活这样一种文字变化的规律。
-            </p>
+    <div class="shell">
+        <div class="img" style="background-image: url('https://img.zcool.cn/community/01ee9c5f1c33e0a801206621823488.jpg?x-oss-process=image/auto-orient,1/resize,m_lfit,w_1280,limit_1/sharpen,100');">
+            <div class="text">
+                <!-- 开始冲泡前，先用开水烫下茶具，清洁茶具的同时，也可以洗掉之前泡茶留下的味道，避免后续泡茶串味；
+                茶具温杯后可以激发茶香，我们平常用盖碗泡茶，温杯后，闻干茶香，茶香更显。另外茶杯温杯后，一定程度上延缓茶汤过快冷却，可以更好的保留茶汤口感 -->
+                <h1>玉碗光含仙掌露，<br>
+                    金芽香带玉溪云。</h1>
+            </div>
         </div>
-        <div class="box">
-            <p>潮州工夫茶是中国古老的传统茶文化中最有代表性的茶道，在潮汕当地更是把茶作为了待客的最佳礼仪。这不仅是因为茶在许多方面有着养生的作用，更因为自古以来茶就有"待君子，清心身"的意境。喝工夫茶是广东潮汕人一项日常生活中最平常不过的事，饭后或者客人来访、好友相见，都是以一壶茶来相伴
-            </p>
+        <div class="gap">
+            <h1>温杯</h1>
+            <div class="imgContainer">
+                <img src="../img/point.png" class="clickButton" alt="">
+                <img src="../img/wenbei1.png" class="firstImg">
+                <img src="../img/arrow_right.png" class="arrowRight" alt="">
+                <img src="../img/wenbei2.png" class="finishImg">
+            </div>
         </div>
-        <div class="box">
-            <p>汉朝 ，茶叶成为佛教“坐禅”的专用滋补品。魏晋南北朝，已有饮茶之风 。隋朝，全民普遍饮茶。 唐代，茶业昌盛，茶叶成为“人家不可一日无茶”，出现茶馆、茶宴、茶会，提倡客来敬茶。宋朝、流行斗茶，贡茶和赐茶。</p>
+        <div class="img" style="background-image: url('../img/toucha.png');">
+            <div class="text">
+        开始冲泡前，先用开水烫下茶具，清洁茶具的同时，也可以洗掉之前泡茶留下的味道，避免后续泡茶串味；
+        茶具温杯后可以激发茶香，我们平常用盖碗泡茶，温杯后，闻干茶香，茶香更显。另外茶杯温杯后，一定程度上延缓茶汤过快冷却，可以更好的保留茶汤口感。
+            </div>
         </div>
-        <div class="box">
-            <p>茶源于中国，传于世界，形成了中华民族优秀传统文化组成部分，体现中国人民对美好生活的向往和对健康追求。茶不仅可清心提神，有益于身心健康和人际交往，中国茶文化中的“和敬怡真”的价值观，对今天共建生态文明及人类命运共同体，也可给我们很多有益的启示。
-            </p>
+        <div class="gap">
+            <h1>投茶</h1>
+            <div class="imgContainer">
+                <img src="../img/point.png" class="clickButton" alt="">
+                <img src="../img/toucha1.jpg" class="firstImg">
+                <img src="../img/arrow_right.png" class="arrowRight" alt="">
+                <img src="../img/toucha2.jpg" class="finishImg">
+            </div>
         </div>
-        <div class="box">
-            <p>仅从茶字演化形成看，历史上称谓和写法较复杂。在古代史料中，茶的名称有荼、槚[jiǎ]、桡[ráo]、蔎[shè]、茗、荈[chuǎn]、葭[jiā]等。至唐代及至陆羽撰写《茶经》之后，“荼”字才被划掉一横成为“茶”字。从此茶字的形、音、义不仅固定下来，且体现出中华民族对真、善、美的人生追求和崇尚自然简单健康的生活哲理与生态文明思想。
-            </p>
+        <div class="img" style="background-image: url('../img/toucha.png');">
+            <div class="text">
+            上投法：
+            注水→投茶
+            “上投”指的是先在杯中注七分满85℃左右的水，再进行投茶，嫩度越好的绿茶所要求的水温越低。
+            中投法：注水→投茶→缓冲泡
+            “中投”指的是先在杯中注入三分满适宜温度的水，然后投茶，轻轻转动浸润茶叶，待其慢慢舒展后再注水至七分满。
+            下投法：投茶→注水
+            “下投”就是我们日常生活中常用的方法，先放茶，再注水至七分满，然后静待其自然舒展。</div>
         </div>
-        <div class="box">
-            <p>茶字是会意字，分三部分。木表示草木，人表示中国人，上面是树叶。也就是说中国人发明了用树叶作为饮料。读音是茶，来自茶叶的生产是一茬一茬的收获，故读作“茶”。“茶”字拆开，就是“人在草木间”，又有长寿之意，源于“廿”（草字头）+“人”（中间的“人”字）+
-                “八十”（“木”字）= 一百零八，故一百零八岁的老人被称为“茶寿老人”，寓指爱茶饮茶，遵循“人在草木间”生态自然简单的生活，人便能健康长寿，活到一百零八岁。</p>
+        <div class="gap">
+            <h1>醒茶</h1>
+            <div class="imgContainer">
+                <img src="../img/point.png" class="clickButton" alt="">
+                <img src="../img/xingcha1.png" class="firstImg">
+                <img src="../img/arrow_right.png" class="arrowRight" alt="">
+                <img src="../img/xnigcha2.png" class="finishImg">
+            </div>
         </div>
-        <div class="box">
-            <p>茶由药用转化为习常饮料，严格意义的“茶”便随之产生了，其典型标志便是“茶”（cha）音的出现。郭璞注《尔雅·释木》“槚”云：“树小如栀子，冬生叶，可煮作羹饮。今呼早采者为茶，晚取者为茗，一名荈，蜀人名之苦荼。”可见，汉时“荼”字已有特指饮料“茶”的读音了，“茶”由“荼”分离出来，并走上了“独立”发展道路。但“茶”字的出现则是伴随茶事的发展和商业活动的日益频繁，直到中唐以后的事，也正符合新符号的产生后于人们的社会生活这样一种文字变化的规律。
-            </p>
+        <div class="img" style="background-image: url('../img/xingcha.jpg');">
+            <div class="text">
+                对于茶饼，可以从中间凹槽处向外入刀解茶，手工压制的茶饼，可从边侧解茶;茶砖则可以从侧面入刀，比较容易将茶剖成两片，而后再分成小块。解茶时尽量保持叶片的完整性，顺着叶片的规律去开解。将解散的茶摊臵于清洁、蔽荫处，使其与空气充分接触。在这期间可在茶叶上覆盖一层宣纸或棉纸，避免落入尘土。并且摊放的环境不能有异味，以免吸收杂昧影响茶叶品质，同时还要避免日光灯长时间照射。
+            </div>
         </div>
-        <div class="box">
-            <p>茶字是会意字，分三部分。木表示草木，人表示中国人，上面是树叶。也就是说中国人发明了用树叶作为饮料。读音是茶，来自茶叶的生产是一茬一茬的收获，故读作“茶”。“茶”字拆开，就是“人在草木间”，又有长寿之意，源于“廿”（草字头）+“人”（中间的“人”字）+
-                “八十”（“木”字）= 一百零八，故一百零八岁的老人被称为“茶寿老人”，寓指爱茶饮茶，遵循“人在草木间”生态自然简单的生活，人便能健康长寿，活到一百零八岁。</p>
+        <div class="gap">
+            <h1>冲泡</h1>
+            <div class="imgContainer">
+                <img src="../img/point.png" class="clickButton" alt="">
+                <img src="../img/chongpao1.png" class="firstImg">
+                <img src="../img/arrow_right.png" class="arrowRight" alt="">
+                <img src="../img/chongpao2.png" class="finishImg">
+            </div>
         </div>
-        <div class="box">
-            <p>茶由药用转化为习常饮料，严格意义的“茶”便随之产生了，其典型标志便是“茶”（cha）音的出现。郭璞注《尔雅·释木》“槚”云：“树小如栀子，冬生叶，可煮作羹饮。今呼早采者为茶，晚取者为茗，一名荈，蜀人名之苦荼。”可见，汉时“荼”字已有特指饮料“茶”的读音了，“茶”由“荼”分离出来，并走上了“独立”发展道路。但“茶”字的出现则是伴随茶事的发展和商业活动的日益频繁，直到中唐以后的事，也正符合新符号的产生后于人们的社会生活这样一种文字变化的规律。
-            </p>
+        <div class="img" style="background-image: url('../img/chongcha.png');">
+            <div class="text">
+            水温以80℃~85℃为宜，茶水比例以1：50为佳，冲泡时间为2~3分钟，泡出来的茶，汤色清翠碧绿而透明清澈，最好现泡现饮。冲泡温度过高或时间过久，茶叶中的多酚类物质容易被破坏，茶汤不但会变黄，其中的芳香物质也会挥发散失。瓷杯冲泡时先用四分之一的水把茶叶润一润，过20秒或半分钟再冲水饮用，一般不盖盖子，否则茶汤会发黄。
+            </div>
         </div>
+        <div class="gap">
+            <h1>出汤</h1>
+            <div class="imgContainer">
+                <img src="../img/point.png" class="clickButton" alt="">
+                <img src="../img/chutang1.jpg" class="firstImg">
+                <img src="../img/arrow_right.png" class="arrowRight" alt="">
+                <img src="../img/chutang2.png" class="finishImg">
+            </div>
+        </div>
+        <div class="img" style="background-image: url('../img/chutang.png');">
+            <div class="text">
+                快出汤：把水注入盖碗之后，盖上盖子，迅速把茶汤倒至公道杯，五秒快出水，七秒出完水，这是快出水的标准，也就是全程冲泡不超过10s的时间。
+                坐杯;在水注入盖碗之后，盖上盖子，让热水在盖碗里闷一段时间，再把盖碗端起来，将茶汤倒入公道杯中的泡茶方式。
+    
+            </div>
+        </div>
+        <div class="gap">
+            <div class="text">
+                <h1>分茶</h1>
+            </div>
+        </div>
+        <div class="img" style="background-image: url('../img/fencha.png');">
+            <div class="text">
+                选择合适的茶叶品种：不同的茶叶品种适合不同的压制方法；<br />
+                合理控制茶叶湿度：在压制过程前要确保茶叶的湿度适当；<br />
+                选择适当的压力和压制时间：压制压力和时间的选择对茶叶的质量和口感有重要影响;<br />
+                均匀分布茶叶：在进行压制之前，需要将茶叶均匀地分布在模具中，以确保茶叶整体受力均衡。<br />
+                适当的贮存和陈化：压制完成后，茶叶需要适当的贮存和陈化，以使茶叶的口感和香气更好。<br />
+                在贮存过程中，需要确保茶叶避免阳光直射以及防潮，保持适当的湿度和通风。</div>
+        </div>
+        <div class="gap">
+            <h1>品饮</h1>
+            <div class="imgContainer">
+                <img src="../img/point.png" class="clickButton" alt="">
+                <img src="../img/chutang1.jpg" class="firstImg">
+                <img src="../img/arrow_right.png" class="arrowRight" alt="">
+                <img src="../img/chutang2.png" class="finishImg">
+            </div>
+        </div>
+        <div class="img" style="background-image: url('../img/pingyin.png');">
+            <div class="text">
+            饮茶要有合理的时间，适当的数量，茶水比例要适宜，冲泡次数应茶而异。一般成年健康的人一日饮茶12克左右。茶类选择可应季节和习惯而定，一般认为红茶性热，绿茶性凉，夏天饮绿茶更能增加消暑作用，而冬天喝红茶具有和胃暖身的作用。
+            </div>
+        </div>
+        <div class="gap">
+            <div class="text">
+                <h1>东西南北中央佛，共饮乾坤一碗茶。</h1>
+            </div>
+        </div>
+
 
     </div>
-    <script>
-        const boxes = document.querySelectorAll('.box')
-
-        window.addEventListener('scroll', checkBoxes)
-
-        checkBoxes()
-
-        function checkBoxes() {
-            const triggerBottom = window.innerHeight / 5 * 4
-
-            boxes.forEach(box => {
-                const boxTop = box.getBoundingClientRect().top
-
-                if (boxTop < triggerBottom) {
-                    box.classList.add('show')
-                } else {
-                    box.classList.remove('show')
-                }
-            })
-        }
-    </script>
 </body>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.js"></script>
+<script>
+    let audio = document.querySelector('audio');
+    audio.play();
+    // let imgContainer = document.querySelectorAll('.gap .imgContainer');
+    // imgContainer.forEach(element => {
+    //     element.addEventListener('click', () => {
+    //         // imgContainer.addEventListener('click', () => {
+    //         element.querySelector('.gap .arrowRight').classList.toggle('gapActive');
+    //         element.querySelector('.gap .finishImg').classList.toggle('gapActive');
+
+    //     })
+    // });
+    // jQuery写法
+    $('.gap .imgContainer').click(function () {
+        // $(this).hide()
+        $(this).find('.arrowRight').toggleClass('gapActive');
+        $(this).find('.finishImg').toggleClass('gapActive');
+    })
+</script>
 
 </html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+        }
+        .splitContainer{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20vh;
+            width: 100vw;
+            /* height: 100vh; */
+            background-image: url('../img/chutang.png');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .splitCard{
+            width: 30%;
+            height: 50vh;
+            /* flex: 1; */
+            margin: 20px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            animation: showIn 1s ease-in-out forwards;
+        }
+     
+        .splitCard:nth-child(odd){
+            transform: translateX(50%);
+            animation: 2s showIn 1s ease-in-out forwards;
+        }
+        /* 偶数右边偏移20px */
+       .splitCard:nth-child(even){
+            transform: translateX(-50%);
+            animation: 4s showIn 1s ease-in-out forwards;
+        }
+        .splitCard{
+            display: flex;
+            flex-direction:column;
+        }
+        .splitCard:hover{
+            scale: 1.1;
+            transition: all 0.5s ease-in-out;
+        }
+        .splitCard .img{
+            /* width: 100%;
+            height: 80%; */
+            flex: 2;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .info{
+            /* width: 100%; */
+            /* height: 100%; */
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 1em;
+            font-weight: bold;
+            color: #000;
+        }
+        @keyframes showIn {
+            0%{
+               opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+        @media screen and (max-width: 768px) {
+            .info{
+                font-size: 0.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="splitContainer">
+        <div class="splitCard">
+                <div class="img" style="background-image: url('../img/card1.jpg');">
+                    
+                </div>
+                <div class="info">
+                茶多酚是水溶性物质，用茶水洗脸能清除面部油腻，收敛毛孔，具有消毒、灭菌、抗皮肤老化的作用，还有助于减少日光中紫外线对皮肤的损伤，是天然的“防晒霜”。
+                </div>
+        </div>
+        <div class="splitCard">
+                <div class="img" style="background-image: url('../img/card2.png');">
+                    
+                </div>
+                <div class="info">
+                唐代《本草拾遗》中关于茶的论述就曾提到“久食令人瘦”，现代科学研究证实了这一点。茶叶中的咖啡碱能促进胃液分泌，帮助消化，增强人体对脂肪的分解能力。国外研究也表明，定期饮茶可以缩减腰围，降低身体质量指数(BMI)，从而有助于预防糖尿病和心脑血管疾病。
+                </div>
+        </div>
+        <div class="splitCard">
+                <div class="img" style="background-image: url('../img/card3.png');">
+                    
+                </div>
+                <div class="info">
+                喝茶对提高记忆力还有一定的作用，具研究表明茶叶中的茶多酚可以对大脑进行局部的改善，从而增加记忆力，提高学习效率。国外研究证实，喝茶可以预防和治疗神经系统疾病，尤其是老年认知障碍症。此外，咖啡碱能促使中枢神经兴奋，有提神、益思、清心的效果。
+                </div>
+        </div>
+        <div class="splitCard">
+                <div class="img" style="background-image: url('../img/card4.jpg');">
+                    
+                </div>
+                <div class="info">
+                虽然茶叶中含有咖啡因成分，会促进钙随排尿流失，但含量极低。即便是咖啡因含量颇高的红茶，每杯也只有30~45毫克。其实，茶叶中含量更多的是有助于减少钙流失的物质，包括氟元素、植物雌激素类物质和钾元素。台湾研究发现，常喝茶的人骨密度较高，髋关节骨折机率更低。
+
+                </div>
+        </div>
+        <div class="splitCard">
+                <div class="img" style="background-image: url('../img/card5.jpeg');">
+                    
+                </div>
+                <div class="info">
+                由于茶叶中的咖啡碱对人体的中枢神经系统，有着明显的兴奋作用，饮茶尤其是饮浓茶，会使人脑处于一种过度兴奋状态而得不到休息。
+                </div>
+        </div>
+        <div class="splitCard">
+                <div class="img" style="background-image: url('../img/card7.jpg');">
+                    
+                </div>
+                <div class="info">
+                因为茶叶中的生物碱类物质会抑制十二指肠对钙质的吸收。同时还能促使尿中钙的排出，使人体钙质少进多出，导致缺钙和骨质疏松，使骨折难以康复。
+                </div>
+        </div>
+    </div>
+</body>
+</html>

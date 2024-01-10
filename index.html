@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.js"></script>
     <title>茶</title>
     <style>
         body {
@@ -99,26 +100,7 @@
             /* background-color: black; */
 
         }
-        @keyframes girlRotate {
-            0% {
-                transform: rotate(0deg);
-            }
 
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-        @keyframes cardEnter {
-            0% {
-                transform: translateY(40px);
-                opacity: 0.2;
-            }
-
-            100% {
-                transform: 0;
-                opacity: 1;
-            }
-        }
 
         /* 手机端字体变小 */
         @media screen and (max-width: 600px) {
@@ -183,7 +165,26 @@
         }
 
 
+        @keyframes girlRotate {
+            0% {
+                transform: rotate(0deg);
+            }
 
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes cardEnter {
+            0% {
+                transform: translateY(40px);
+                opacity: 0.2;
+            }
+
+            100% {
+                transform: 0;
+                opacity: 1;
+            }
+        }
         @keyframes girlEnter {
             0% {
                 transform: translateX(40px);
@@ -258,7 +259,8 @@
 
     </div> -->
 
-
+    <!-- cdn jquery -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.js"></script>
     <script>
         //    进入界面就放音乐
         let audio = document.querySelector('audio');
@@ -273,11 +275,28 @@
         autoTextAffect();
         //    setInterval(autoTextAffect,1000);
         function autoTextAffect() {
-            autoText.innerText = words.slice(0, index + 1);
+            // autoText.innerText = words.slice(0, index + 1);
+            $('.animate-text p').text(words.slice(0, index + 1));
             index = (index + 1) % words.length;
             //   index=index+1;
             setTimeout(autoTextAffect, speed);
         }
+        // const words = '浮生半日，赴一场品茶之约';
+        // textContainer = document.querySelector('.animate-text');
+        // autoText = document.querySelector('.animate-text p');
+        // let speed = 250
+        // let index = 1;
+        // autoText.innerText = 'nice to meet you';
+        // autoTextAffect();
+        // //    setInterval(autoTextAffect,1000);
+        // function autoTextAffect() {
+        //     autoText.innerText = words.slice(0, index + 1);
+        //     index = (index + 1) % words.length;
+        //     //   index=index+1;
+        //     setTimeout(autoTextAffect, speed);
+        // }
+
+
         //    移动端经过card就放大
         let cards = document.querySelectorAll('.card');
         cards.forEach((card, index) => {
@@ -289,6 +308,8 @@
                 card.classList.remove('touched');
             })
         })
+
+
     </script>
     <script type="text/javascript"
         src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/static/js/sakura-less.js"></script>

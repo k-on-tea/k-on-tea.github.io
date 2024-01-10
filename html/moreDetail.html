@@ -30,10 +30,34 @@
             width: 80vw;
             height: 45vw;
         }
+
+        .benefitsOfTea {
+            text-decoration: none;
+            color: black;
+            font-size: 2vw;
+            margin-top: 5vw;
+            margin-bottom: 5vw;
+            animation: benefitsOfTeaAnimation 2s ease-in-out infinite;
+        }
+        @keyframes benefitsOfTeaAnimation {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.4);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+            
+        }
     </style>
 </head>
 
 <body>
+    
     <audio src="../assets/music/index_bgm.mp3"></audio>
     <div class="nav">
         <a href="../index.html">
@@ -62,6 +86,12 @@
             </ul>
         </div>
     </div>
+    <a class="benefitsOfTea" href="benefitsOfTea.html"><h1>喝茶的好处 <br>
+    click me!
+    </h1>
+       
+    </a>
+    
     <div class="vedioContainer">
         <iframe class="video" src="//player.bilibili.com/player.html?aid=99211940&bvid=BV1F741117wt&cid=169356835&p=1"
             scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
